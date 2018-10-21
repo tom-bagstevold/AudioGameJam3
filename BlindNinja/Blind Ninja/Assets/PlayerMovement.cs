@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject[] directions;
 
-    public bool attackNorth;
+    private bool attackNorth;
     private bool attackSouth;
     private bool attackEast;
     private bool attackWest;
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                
+                directions[3].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
 
             
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-
+                directions[2].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
             
         }
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-
+                directions[1].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
            
         }

@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<Rigidbody>().AddRelativeForce(500, 0, 0);
+            gameObject.GetComponent<Rigidbody>().AddRelativeForce(500, 500, 0);
             Invoke("KillMyself", 3);
         }
         
