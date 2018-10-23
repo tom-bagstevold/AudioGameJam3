@@ -41,19 +41,19 @@ public class BorderTrigger : MonoBehaviour
         {
             if(myBorder == Border.North)
             {
-                //other.gameObject.GetComponent<>().BorderNorth = true;
+                other.gameObject.GetComponent<EnemyAI>().northBordered = true;
             }
             else if(myBorder == Border.South)
             {
-
+                other.gameObject.GetComponent<EnemyAI>().southBordered = true;
             }
             else if(myBorder == Border.East)
             {
-
+                other.gameObject.GetComponent<EnemyAI>().eastBordered = true;
             }
             else if(myBorder == Border.West)
             {
-
+                other.gameObject.GetComponent<EnemyAI>().westBordered = true;
             }
         }
     }
@@ -82,7 +82,22 @@ public class BorderTrigger : MonoBehaviour
 
         if (other.name == "Enemy")
         {
-           
+            if (myBorder == Border.North)
+            {
+                other.gameObject.GetComponent<EnemyAI>().northBordered = false;
+            }
+            else if (myBorder == Border.South)
+            {
+                other.gameObject.GetComponent<EnemyAI>().southBordered = false;
+            }
+            else if (myBorder == Border.East)
+            {
+                other.gameObject.GetComponent<EnemyAI>().eastBordered = false;
+            }
+            else if (myBorder == Border.West)
+            {
+                other.gameObject.GetComponent<EnemyAI>().westBordered = false;
+            }
         }
     }
 

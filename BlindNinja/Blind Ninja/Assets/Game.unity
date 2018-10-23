@@ -1853,6 +1853,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+--- !u!114 &2284316271297853251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284316271297853244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc34473f6a47fb0459b7a48fb3596b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  northBordered: 0
+  southBordered: 0
+  eastBordered: 0
+  westBordered: 0
 --- !u!1 &4299594543894129907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4299594543894129907, guid: 9abc20044c530eb42bda8ebe25d1504b,
