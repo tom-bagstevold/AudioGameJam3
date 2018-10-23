@@ -27,7 +27,9 @@ public class EnemyAI : MonoBehaviour
 
     void Move()
     {
-        int r = Random.Range(0, 3);
+        int r = Random.Range(0, 4);
+
+        Debug.Log(r);
 
         if(r == 0)
         {
@@ -38,7 +40,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-               
+                Move();
             }
 
         }
@@ -51,7 +53,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-
+                Move();
             }
         }
         else if(r == 2)
@@ -63,7 +65,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-
+                Move();
             }
         }
         else if(r == 3)
@@ -75,7 +77,7 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-
+                Move();
             }
         }
 
