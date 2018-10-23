@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Combat Variables")]
+    public int courage;
+    public int damage;
+    public bool hasBeenHit;
+    public bool playerInRange;
+    public bool canAttack;
+    public bool attacking;
+
+    private int actionRoll;
+
+    [Header("Movement")]
     public Grid grid;
     public bool northBordered;
     public bool southBordered;
@@ -13,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        courage = 50;
+        damage = 10;
         grid = FindObjectOfType<Grid>();
     }
 
@@ -23,6 +36,39 @@ public class EnemyAI : MonoBehaviour
         {
             Move();
         }
+    }
+
+    public void ModifyCourage(int courageModifier)
+    {
+        courage += courageModifier;
+    }
+
+    public void TakeAction()
+    {
+        actionRoll = Random.Range(0, 100);
+
+        if(actionRoll <= courage)
+        {
+            if(canAttack)
+            {
+                Attack();
+            }
+            else
+            {
+                Move();
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+    void Attack()
+    {
+        attacking = true;
+
+
     }
 
     void Move()
