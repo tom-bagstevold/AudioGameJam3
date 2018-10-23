@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     public int damage;
     public bool hasBeenHit;
     public bool playerInRange;
+    public bool canAct;
     public bool canAttack;
     public bool attacking;
 
@@ -36,6 +37,12 @@ public class EnemyAI : MonoBehaviour
         {
             Move();
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Attack();
+        }
+
     }
 
     public void ModifyCourage(int courageModifier)
@@ -43,39 +50,58 @@ public class EnemyAI : MonoBehaviour
         courage += courageModifier;
     }
 
-    public void TakeAction()
+    public void RollAction()
     {
         actionRoll = Random.Range(0, 100);
 
-        if(actionRoll <= courage)
+        if (actionRoll <= courage)
         {
-            if(canAttack)
-            {
-                Attack();
-            }
-            else
-            {
-                Move();
-            }
+            canAct = true;
         }
         else
         {
+            canAct = false;
+        }
 
+    }
+
+    public void TakeAction()
+    {
+        if (canAttack)
+        {
+            Attack();
+        }
+        else
+        {
+            Move();
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         attacking = true;
 
+        //play wind up
+
+        Invoke("WindupTwo", 0.6f);
 
     }
 
-    void Move()
+    void WindupTwo()
+    {
+        Invoke("AttackLanded", 0.6f);
+    }
+
+    void AttackLanded()
+    {
+        //Code for murdering player here
+
+        attacking = false;
+    }
+
+    public void Move()
     {
         int r = Random.Range(0, 4);
-
-        Debug.Log(r);
 
         if(r == 0)
         {
