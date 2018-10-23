@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
             attackWest = true;
         }
 
+
         if (!directions[0].GetComponent<EnemyTrigger>().EnemyTriggered)
         {
             attackNorth = false;
