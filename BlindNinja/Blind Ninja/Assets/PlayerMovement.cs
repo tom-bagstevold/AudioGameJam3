@@ -8,6 +8,11 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject[] directions;
 
+    public bool northBordered;
+    public bool southBordered;
+    public bool eastBordered;
+    public bool westBordered;
+
     private bool attackNorth;
     private bool attackSouth;
     private bool attackEast;
@@ -57,12 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if(!attackWest)
+            if(!attackWest && !westBordered)
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(2, 0, 0));
             }
-            else
+            else if(attackWest)
             {
                 directions[3].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
@@ -72,12 +77,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if(!attackEast)
+            if(!attackEast && !eastBordered)
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(-2, 0, 0));
             }
-            else
+            else if(attackEast)
             {
                 directions[2].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
@@ -86,12 +91,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if(!attackNorth)
+            if(!attackNorth && !northBordered)
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(0, 0, -2));
             }
-            else
+            else if(attackNorth)
             {
                 directions[0].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
@@ -99,12 +104,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if(!attackSouth)
+            if(!attackSouth && !southBordered)
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(0, 0, 2));
             }
-            else
+            else if(attackNorth)
             {
                 directions[1].GetComponent<EnemyTrigger>().enemy.GetComponent<EnemyHealth>().TakeDamage(10);
             }
