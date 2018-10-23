@@ -45,9 +45,25 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    public void ModifyCourage(int courageModifier)
+    public void ModifyCouragePositive(int courageModifier)
     {
         courage += courageModifier;
+
+        if(courage > 100)
+        {
+            courage = 100;
+        }
+        
+    }
+
+    public void ModifyCourageNegative(int courageModifier)
+    {
+        courage -= courageModifier;
+
+        if (courage < 0)
+        {
+            courage = 0;
+        }
     }
 
     public void RollAction()

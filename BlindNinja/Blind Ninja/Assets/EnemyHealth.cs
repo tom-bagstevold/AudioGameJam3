@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         if(health == 0)
         {
             health = 50;
@@ -18,6 +20,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        gameObject.GetComponent<EnemyAI>().hasBeenHit = true;
+
         if((health + damage) > 0)
         {
             health -= damage;

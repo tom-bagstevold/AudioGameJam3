@@ -28,13 +28,15 @@ public class TurnManager : MonoBehaviour
 
         for(int i = 0; 0 < enemies.Count; i++)
         {
-            if (enemies[i].GetComponent<EnemyAI>().hasBeenHit)
+            if (!enemies[i].GetComponent<EnemyAI>().hasBeenHit)
             {
-                enemies[i].GetComponent<EnemyAI>().ModifyCourage(-20);
+                enemies[i].GetComponent<EnemyAI>().ModifyCouragePositive(20);
+
             }
-            else
+            else if(enemies[i].GetComponent<EnemyAI>().hasBeenHit)
             {
-                enemies[i].GetComponent<EnemyAI>().ModifyCourage(20);
+                enemies[i].GetComponent<EnemyAI>().ModifyCourageNegative(20);
+                enemies[i].GetComponent<EnemyAI>().hasBeenHit = false;
             }
 
             enemies[i].GetComponent<EnemyAI>().RollAction();
