@@ -508,6 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  markForDestruction: 0
+  gameManager: {fileID: 0}
 --- !u!54 &606299299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1051,6 +1053,7 @@ MonoBehaviour:
   - {fileID: 606299297}
   - {fileID: 1913257266}
   - {fileID: 2068661000}
+  attackerChosen: 0
 --- !u!43 &1500483644
 Mesh:
   m_ObjectHideFlags: 0
@@ -1299,6 +1302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  markForDestruction: 0
+  gameManager: {fileID: 0}
 --- !u!54 &1913257268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1776,6 +1781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  markForDestruction: 0
+  gameManager: {fileID: 0}
 --- !u!54 &2068661002
 Rigidbody:
   m_ObjectHideFlags: 0

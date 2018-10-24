@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
 
     public int health;
-    public bool markForDestruction;
-    public GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-
         if(health == 0)
         {
-            health = 50;
+            health = 100;
         }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void TakeDamage(int damage)
     {
-        gameObject.GetComponent<EnemyAI>().hasBeenHit = true;
-        gameObject.GetComponent<EnemyAI>().CancelAttack();
+        
 
         if ((health + damage) > 0)
         {
@@ -34,13 +36,12 @@ public class EnemyHealth : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().AddRelativeForce(500, 500, 0);
             MarkForDestruction();
         }
-        
+
     }
 
     private void MarkForDestruction()
     {
-        markForDestruction = true;
-        gameManager.GetComponent<TurnManager>().RemoveEnemyFromList();
+        
         Invoke("KillMyself", 3);
     }
 
@@ -48,6 +49,4 @@ public class EnemyHealth : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-  
 }

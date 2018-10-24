@@ -67,4 +67,17 @@ public class TurnManager : MonoBehaviour
     {
         attackerChosen = false;
     }
+
+    public void RemoveEnemyFromList()
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if(enemies[i].GetComponent<EnemyHealth>().markForDestruction)
+            {
+                enemies.Remove(enemies[i]);
+                
+            }
+        }
+    }
+
 }

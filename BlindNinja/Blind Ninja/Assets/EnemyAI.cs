@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     public bool canAct;
     public bool canAttack;
     public bool attacking;
+    public GameObject player;
 
     private int actionRoll;
 
@@ -25,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        player = GameObject.Find("Player");
         courage = 50;
         damage = 10;
         grid = FindObjectOfType<Grid>();
@@ -110,7 +112,7 @@ public class EnemyAI : MonoBehaviour
 
     void AttackLanded()
     {
-        //Code for murdering player here
+        player.GetComponent<PlayerHealth>().TakeDamage(damage);
 
         attacking = false;
     }
@@ -169,5 +171,12 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
+    }
+
+    public void CancelAttack()
+    {
+        Debug.Log("Attack Countered!");
+        CancelInvoke("WindupTwo");
+        CancelInvoke("AttackLanded");
     }
 }
