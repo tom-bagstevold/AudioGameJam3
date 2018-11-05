@@ -49,5 +49,11 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Heartbeat()
+    {
+        //Trigger AudioSource Here, playing the right track based on the health value of the enemy 
+
+    }
+
   
 }

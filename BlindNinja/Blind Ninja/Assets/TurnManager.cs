@@ -12,6 +12,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("StartTurn", 0, 5);
+        //StartCoroutine(StartTurn());
         InvokeRepeating("EndTurn", 0, 4.5f);
     }
 
@@ -57,9 +58,11 @@ public class TurnManager : MonoBehaviour
                 }
             }
 
+            
+
         }
 
-        
+       
         
     }
 
