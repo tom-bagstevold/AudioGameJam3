@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1043,6 +1043,8 @@ MonoBehaviour:
   health: 50
   markForDestruction: 0
   gameManager: {fileID: 0}
+  source: {fileID: 0}
+  heartbeats: []
 --- !u!54 &606299299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1738,23 +1740,23 @@ MonoBehaviour:
     LowFreqTransmission: 0.1
     MidFreqTransmission: 0.05
     HighFreqTransmission: 0.03
-  simulationPreset: 0
+  simulationPreset: 2
   simulationValue:
     OcclusionSamples: 128
-    RealtimeRays: 4096
+    RealtimeRays: 16384
     RealtimeSecondaryRays: 1024
-    RealtimeBounces: 2
+    RealtimeBounces: 8
     RealtimeThreadsPercentage: 5
-    BakeRays: 16384
+    BakeRays: 65536
     BakeSecondaryRays: 4096
-    BakeBounces: 32
+    BakeBounces: 128
     BakeThreadsPercentage: 5
     Duration: 1
     AmbisonicsOrder: 1
     MaxSources: 32
   updateComponents: 1
   currentAudioListener: {fileID: 0}
-  showLoadTimeOptions: 0
+  showLoadTimeOptions: 1
   showMassBakingOptions: 0
   layerMask:
     serializedVersion: 2
@@ -1767,7 +1769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060372819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.18, y: 0.62, z: 3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4189,6 +4191,8 @@ MonoBehaviour:
   health: 50
   markForDestruction: 0
   gameManager: {fileID: 0}
+  source: {fileID: 0}
+  heartbeats: []
 --- !u!54 &1913257268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4668,6 +4672,8 @@ MonoBehaviour:
   health: 50
   markForDestruction: 0
   gameManager: {fileID: 0}
+  source: {fileID: 0}
+  heartbeats: []
 --- !u!54 &2068661002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4750,6 +4756,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50cce142668f57d49bfd60494d6e7a34, type: 3}

@@ -8,6 +8,9 @@ public class TurnManager : MonoBehaviour
     public List<GameObject> enemies;
     public bool attackerChosen;
 
+    private float pacemaker;
+    private bool activatePacemaker;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +22,21 @@ public class TurnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(activatePacemaker)
+        {
+            pacemaker += Time.deltaTime;
+        }
+        
+        if(!activatePacemaker)
+        {
+            pacemaker = 0;
+        }
         
     }
 
     public void StartTurn()
     {
-        //heartbeat shit here
+        StartCoroutine(EnemyHeartbeats());
 
 
         for(int i = 0; 0 < enemies.Count; i++)
@@ -69,6 +81,7 @@ public class TurnManager : MonoBehaviour
      public void EndTurn()
     {
         attackerChosen = false;
+        StopCoroutine(EnemyHeartbeats());
     }
 
     public void RemoveEnemyFromList()
@@ -80,6 +93,21 @@ public class TurnManager : MonoBehaviour
                 enemies.Remove(enemies[i]);
                 
             }
+        }
+    }
+
+    void TriggerHeartbeat(int enemyIndex)
+    {
+        enemies[enemyIndex].GetComponent<EnemyHealth>().Heartbeat();
+    }
+
+    IEnumerator EnemyHeartbeats()
+    {
+        for (int o = 0; o < enemies.Count; o++)
+        {
+            TriggerHeartbeat(o);
+            yield return new WaitForSeconds(1f);
+
         }
     }
 

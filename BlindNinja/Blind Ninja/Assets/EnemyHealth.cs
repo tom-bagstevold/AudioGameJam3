@@ -9,10 +9,15 @@ public class EnemyHealth : MonoBehaviour
     public bool markForDestruction;
     public GameObject gameManager;
 
+    [Header("Audio")]
+    public AudioSource source;
+    public AudioClip[] heartbeats;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
+        source.clip = heartbeats[0];
 
         if(health == 0)
         {
@@ -28,6 +33,19 @@ public class EnemyHealth : MonoBehaviour
         if ((health + damage) > 0)
         {
             health -= damage;
+
+            if (health > 30)
+            {
+                source.clip = heartbeats[0];
+            }
+            else if (health < 30 && health > 15)
+            {
+                source.clip = heartbeats[1];
+            }
+            else if(health < 15 && health > 0)
+            {
+                source.clip = heartbeats[2];
+            }
         }
         else
         {
@@ -51,6 +69,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void Heartbeat()
     {
+        if(!markForDestruction)
+        {
+            source.Play();
+        }
+
+
         //Trigger AudioSource Here, playing the right track based on the health value of the enemy 
 
     }
