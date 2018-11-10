@@ -1211,7 +1211,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -1236,23 +1236,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 606299296}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &606299298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606299297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d89bba60e7cec246a48d3c31c0a4097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  markForDestruction: 0
-  gameManager: {fileID: 0}
-  source: {fileID: 0}
-  heartbeats: []
 --- !u!54 &606299299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1299,8 +1282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioEngine: 0
-  sofaFiles: []
-  currentSOFAFile: 0
+  sofaFiles:
+  - hrtf b_nh822.sofa
+  currentSOFAFile: 1
   materialPreset: 0
   materialValue:
     LowFreqAbsorption: 0.1
@@ -4139,7 +4123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1642384065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4191,9 +4175,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 80ef5b8d6bf218f7f88a186df62dd461, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fcc14ccd8e6eac14d8d603f55eb2ee02, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.348
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4773,7 +4757,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -4798,23 +4782,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1913257265}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1913257267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913257266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d89bba60e7cec246a48d3c31c0a4097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  markForDestruction: 0
-  gameManager: {fileID: 0}
-  source: {fileID: 0}
-  heartbeats: []
 --- !u!54 &1913257268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5274,7 +5241,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -5299,23 +5266,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2068660999}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2068661001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068661000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d89bba60e7cec246a48d3c31c0a4097, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  markForDestruction: 0
-  gameManager: {fileID: 0}
-  source: {fileID: 0}
-  heartbeats: []
 --- !u!54 &2068661002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5398,31 +5348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
-        type: 3}
-      propertyPath: MinDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
-        type: 3}
-      propertyPath: airAbsorption
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
-        type: 3}
-      propertyPath: indirectMixLevel
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50cce142668f57d49bfd60494d6e7a34, type: 3}

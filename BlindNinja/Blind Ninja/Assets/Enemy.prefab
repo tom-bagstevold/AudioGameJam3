@@ -594,7 +594,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -602,7 +602,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -693,7 +693,7 @@ MonoBehaviour:
   directBinaural: 1
   interpolation: 1
   physicsBasedAttenuation: 1
-  airAbsorption: 0
+  airAbsorption: 1
   dipoleWeight: 0
   dipolePower: 0
   occlusionMode: 3
@@ -702,7 +702,7 @@ MonoBehaviour:
   directMixLevel: 1
   reflections: 1
   indirectBinaural: 1
-  indirectMixLevel: 1
+  indirectMixLevel: 0.05
   simulationType: 0
   uniqueIdentifier: 
   avoidSilenceDuringInit: 0
