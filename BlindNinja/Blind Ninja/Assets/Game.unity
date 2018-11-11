@@ -1211,7 +1211,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -4123,7 +4123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1642384065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4757,7 +4757,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -5241,7 +5241,7 @@ PrefabInstance:
     - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818867570820232895, guid: 50cce142668f57d49bfd60494d6e7a34,
         type: 3}
@@ -5348,6 +5348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102995936267290515, guid: 50cce142668f57d49bfd60494d6e7a34,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50cce142668f57d49bfd60494d6e7a34, type: 3}
