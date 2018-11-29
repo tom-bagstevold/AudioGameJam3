@@ -23,6 +23,12 @@ public class EnemyAI : MonoBehaviour
     public bool eastBordered;
     public bool westBordered;
 
+    [Header("Audio")]
+    public AudioSource movementSource;
+    public AudioClip[] footsteps;
+
+    private int clipNum;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,14 +36,19 @@ public class EnemyAI : MonoBehaviour
         courage = 50;
         damage = 10;
         grid = FindObjectOfType<Grid>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        movementSource.clip = footsteps[clipNum];
+        movementSource.Play();
+
+        if (Input.GetKeyDown(KeyCode.K))
         {
             Move();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.L))
@@ -119,18 +130,27 @@ public class EnemyAI : MonoBehaviour
 
     public void Move()
     {
+        clipNum = Random.Range(0, footsteps.Length);
+
+
+
         int r = Random.Range(0, 4);
 
         if(r == 0)
         {
             if(!northBordered)
             {
+
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(0, 0, -2));
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
             else
             {
                 Move();
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
 
         }
@@ -140,10 +160,14 @@ public class EnemyAI : MonoBehaviour
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(0, 0, 2));
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
             else
             {
                 Move();
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
         }
         else if(r == 2)
@@ -152,10 +176,14 @@ public class EnemyAI : MonoBehaviour
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(-2, 0, 0));
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
             else
             {
                 Move();
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
         }
         else if(r == 3)
@@ -164,10 +192,14 @@ public class EnemyAI : MonoBehaviour
             {
                 Vector3 pos = gameObject.transform.position;
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(2, 0, 0));
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
             else
             {
                 Move();
+                movementSource.clip = footsteps[clipNum];
+                movementSource.Play();
             }
         }
 
