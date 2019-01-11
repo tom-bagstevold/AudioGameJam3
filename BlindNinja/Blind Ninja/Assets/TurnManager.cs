@@ -41,6 +41,8 @@ public class TurnManager : MonoBehaviour
 
         for(int i = 0; 0 < enemies.Count; i++)
         {
+            Debug.Log(i);
+
             if (!enemies[i].GetComponent<EnemyAI>().hasBeenHit)
             {
                 enemies[i].GetComponent<EnemyAI>().ModifyCouragePositive(20);

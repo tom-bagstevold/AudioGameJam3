@@ -145,6 +145,7 @@ public class EnemyAI : MonoBehaviour
                 gameObject.transform.position = grid.GetNearestPointOnGrid(pos + new Vector3(0, 0, -2));
                 movementSource.clip = footsteps[clipNum];
                 movementSource.Play();
+                
             }
             else
             {
