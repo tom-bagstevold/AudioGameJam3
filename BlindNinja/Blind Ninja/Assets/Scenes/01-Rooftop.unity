@@ -3726,7 +3726,6 @@ MonoBehaviour:
   conversationSources: []
   currentMixerGroup: 0
   currentAudioSource: 0
-  currentMixerGroupLength: 0
 --- !u!4 &591673066
 Transform:
   m_ObjectHideFlags: 0

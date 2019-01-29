@@ -60,9 +60,11 @@ public class AudioBrowsingManager : MonoBehaviour
             activated = false;
             currentMixerGroup = 0;
 
+            UnSelectCurrentClip();
+
             //roomToneSources[previousAudioSource].outputAudioMixerGroup = audioGroups[0];
             //ambienceToneSources[previousAudioSource].outputAudioMixerGroup = audioGroups[1];
-            specificFlavorSources[previousAudioSource].outputAudioMixerGroup = audioGroups[2];
+            //specificFlavorSources[previousAudioSource].outputAudioMixerGroup = audioGroups[2];
             //propsSources[previousAudioSource].outputAudioMixerGroup = audioGroups[3];
             currentAudioSource = 0;
             previousAudioSource = 0;
@@ -74,11 +76,13 @@ public class AudioBrowsingManager : MonoBehaviour
         {
             if(currentMixerGroup >= 0 && currentMixerGroup < 4)
             {
+                UnSelectCurrentClip();
                 currentMixerGroup += 1;
                 SelectGroup(currentMixerGroup);
             }
             else if(currentMixerGroup == 4)
             {
+                UnSelectCurrentClip();
                 currentMixerGroup = 1;
                 SelectGroup(currentMixerGroup);
             }
@@ -88,11 +92,13 @@ public class AudioBrowsingManager : MonoBehaviour
         {
             if (currentMixerGroup > 1 && currentMixerGroup <= 4)
             {
+                UnSelectCurrentClip();
                 currentMixerGroup -= 1;
                 SelectGroup(currentMixerGroup);
             }
             else if (currentMixerGroup == 1)
             {
+                UnSelectCurrentClip();
                 currentMixerGroup = 4;
                 SelectGroup(currentMixerGroup);
             }
@@ -117,6 +123,25 @@ public class AudioBrowsingManager : MonoBehaviour
                 SelectClip(currentAudioSource);
             }
             
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && activated)
+        {
+
+            if (currentAudioSource <= currentMixerGroupLength)
+            {
+                SelectClip(currentAudioSource);
+                previousAudioSource = currentAudioSource;
+                currentAudioSource += 1;
+            }
+            else if (currentAudioSource > currentMixerGroupLength)
+            {
+                currentAudioSource = 0;
+                previousAudioSource = 0;
+                SelectClip(currentAudioSource);
+            }
+
 
         }
 
@@ -217,6 +242,41 @@ public class AudioBrowsingManager : MonoBehaviour
             propsSources[previousAudioSource].outputAudioMixerGroup = audioGroups[3];
             propsSources[currentAudioSource].outputAudioMixerGroup = selectedGroup;
             
+        }
+
+    }
+
+    void UnSelectCurrentClip()
+    {
+        if (currentMixerGroup == 1)
+        {
+            masterMixer.SetFloat("RoomToneWet", 0f);
+            roomToneSources[currentAudioSource].outputAudioMixerGroup = audioGroups[0];
+            currentAudioSource = 0;
+
+        }
+
+        else if (currentMixerGroup == 2)
+        {
+            masterMixer.SetFloat("AmbienceWet", 0f);
+            ambienceToneSources[currentAudioSource].outputAudioMixerGroup = audioGroups[1];
+            currentAudioSource = 0;
+
+        }
+
+        else if (currentMixerGroup == 3)
+        {
+            masterMixer.SetFloat("SpecificFlavorsWet", 0f);
+            specificFlavorSources[previousAudioSource].outputAudioMixerGroup = audioGroups[2];
+            specificFlavorSources[currentAudioSource].outputAudioMixerGroup = audioGroups[2];
+            currentAudioSource = 0;
+        }
+
+        else if (currentMixerGroup == 4)
+        {
+            masterMixer.SetFloat("PropsWet", 0f);
+            propsSources[currentAudioSource].outputAudioMixerGroup = audioGroups[3];
+            currentAudioSource = 0;
         }
 
     }
