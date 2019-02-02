@@ -31,7 +31,7 @@ public class AudioBrowsingManager : MonoBehaviour
     [Header("Current Selection")]
     public int currentMixerGroup;
     public int currentAudioSource;
-    int previousAudioSource;
+    public int previousAudioSource;
 
     bool activated;
     bool listeningSingleSources;
@@ -108,9 +108,13 @@ public class AudioBrowsingManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.RightArrow) && activated)
         {
-            
+            /*
+            if (previousAudioSource > currentAudioSource)
+            {
+                previousAudioSource = currentAudioSource + -1;
+            } */
 
-            if(currentAudioSource <= currentMixerGroupLength)
+            if (currentAudioSource <= currentMixerGroupLength)
             {
                 SelectClip(currentAudioSource);
                 previousAudioSource = currentAudioSource;
@@ -128,17 +132,24 @@ public class AudioBrowsingManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && activated)
         {
+            /*
+            if(previousAudioSource < currentAudioSource)
+            {
+                previousAudioSource = currentAudioSource + 1;
+            } */
 
-            if (currentAudioSource <= currentMixerGroupLength)
+            if (currentAudioSource > 0)
             {
                 SelectClip(currentAudioSource);
                 previousAudioSource = currentAudioSource;
-                currentAudioSource += 1;
+
+
+                currentAudioSource -= 1;
             }
-            else if (currentAudioSource > currentMixerGroupLength)
+            else if (currentAudioSource == 0)
             {
-                currentAudioSource = 0;
-                previousAudioSource = 0;
+                currentAudioSource = currentMixerGroupLength;
+                previousAudioSource = currentMixerGroupLength;
                 SelectClip(currentAudioSource);
             }
 
