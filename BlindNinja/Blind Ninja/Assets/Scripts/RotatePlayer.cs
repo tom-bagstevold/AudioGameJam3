@@ -21,12 +21,12 @@ public class RotatePlayer : MonoBehaviour
 
         //gameObject.transform.position += new Vector3(0, 1, 0);
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.D))
         {
             transform.Rotate(myRotation.x, myRotation.y - 90, myRotation.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             transform.Rotate(myRotation.x, myRotation.y + 90, myRotation.z);
         }
