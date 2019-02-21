@@ -45,13 +45,13 @@ public class WallRays : MonoBehaviour
 
         RaycastHit rayray;
         Ray myRayray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward);
+        //Debug.DrawRay(transform.position, transform.forward);
 
         if (Physics.Raycast(transform.position, dir, out rayray))
         {
             source.transform.position = rayray.point;
 
-            Debug.Log("Collided with " + rayray.transform.name);
+            //Debug.Log("Collided with " + rayray.transform.name);
 
             //Debug.DrawRay(transform.position, dir);
 

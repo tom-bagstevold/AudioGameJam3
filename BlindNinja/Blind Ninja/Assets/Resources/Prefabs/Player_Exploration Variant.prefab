@@ -2070,6 +2070,7 @@ MonoBehaviour:
   source: {fileID: 5613480663276616132}
   wallClip: {fileID: 0}
   transitionClip: {fileID: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &2535803405202862417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2118,7 @@ MonoBehaviour:
   source: {fileID: 5476853627087751809}
   wallClip: {fileID: 0}
   transitionClip: {fileID: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &2885044116099374692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,6 +3302,7 @@ MonoBehaviour:
   source: {fileID: 0}
   wallClip: {fileID: 0}
   transitionClip: {fileID: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &4094862861243268950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,6 +3520,7 @@ MonoBehaviour:
   source: {fileID: 3833244302771649826}
   wallClip: {fileID: 0}
   transitionClip: {fileID: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &5736094486638424658
 GameObject:
   m_ObjectHideFlags: 0
@@ -3564,6 +3568,7 @@ MonoBehaviour:
   source: {fileID: 1504980960204751650}
   wallClip: {fileID: 0}
   transitionClip: {fileID: 0}
+  dir: {x: 0, y: 0, z: 0}
 --- !u!1 &6051198268929546265
 GameObject:
   m_ObjectHideFlags: 0
