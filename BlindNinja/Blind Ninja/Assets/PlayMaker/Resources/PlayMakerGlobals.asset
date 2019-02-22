@@ -34,8 +34,7 @@ MonoBehaviour:
       tooltip: 
       showInInspector: 0
       networkSync: 0
-      value: {fileID: 7615267552037659443, guid: 4332c9f1b05be9b49898b99a38c8f86a,
-        type: 3}
+      value: {fileID: 2067233465, guid: bf165ee80954a2a4b8e15ef29ccd4ce2, type: 3}
     objectVariables: []
     materialVariables: []
     textureVariables: []
