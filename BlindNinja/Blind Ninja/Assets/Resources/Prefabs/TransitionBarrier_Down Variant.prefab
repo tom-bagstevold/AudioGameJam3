@@ -77,24 +77,69 @@ PrefabInstance:
       objectReference: {fileID: 8484940416101425509}
     - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
         type: 3}
+      propertyPath: fsm.states.Array.data[1].transitions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
       propertyPath: fsm.preprocessed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
         type: 3}
       propertyPath: fsm.handleTriggerEnter
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
         type: 3}
       propertyPath: fsm.handleTriggerExit
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
         type: 3}
       propertyPath: fsm.states.Array.data[2].actionData.fsmGameObjectParams.Array.data[2].value
       value: 
       objectReference: {fileID: 6069624909754327427}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[0].transitions.Array.data[1].toState
+      value: Trigger_Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[2].name
+      value: Trigger_Enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[2].position.width
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[0].transitions.Array.data[0].toState
+      value: Trigger_Enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[1].name
+      value: Trigger_Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[1].position.width
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[1].transitions.Array.data[0].toState
+      value: Trigger_Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293724867615299900, guid: 0cade31890707064aa8d5f99d445cf27,
+        type: 3}
+      propertyPath: fsm.states.Array.data[1].position.height
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1566034836, guid: 0cade31890707064aa8d5f99d445cf27, type: 3}
       propertyPath: fsm.states.Array.data[1].actionData.actionNames.Array.size
       value: 3
