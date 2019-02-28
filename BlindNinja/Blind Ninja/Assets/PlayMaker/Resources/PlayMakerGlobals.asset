@@ -15,6 +15,12 @@ MonoBehaviour:
   variables:
     floatVariables:
     - useVariable: 1
+      name: PlayerSpeed
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 10
+    - useVariable: 1
       name: Speed
       tooltip: 
       showInInspector: 0
@@ -60,5 +66,5 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 0000000000000000000000000000000000000000
+    variableCategoryIDs: 000000000000000000000000000000000000000000000000
   events: []
